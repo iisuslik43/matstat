@@ -5,7 +5,7 @@ from scipy.stats import moment
 
 distribution = int(input("Type 1 for uniform or 2 for exponential distribution:"))
 
-theta = int(input("Type theta:"))
+theta = float(input("Type theta:"))
 
 graphicPoints = []
 
