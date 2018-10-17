@@ -14,7 +14,7 @@ def moment(list, k):
 graphicPoints1 = []
 
 gamma = 0.9
-sigma = 5
+sigma = 1
 maxN = 200
 
 for n in range(20, maxN):
@@ -36,7 +36,7 @@ for n in range(20, maxN):
 		moment1 = moment(sample, 1)
 		kv1 = norm.ppf((3 + gamma) / 4)
 		kv2 = norm.ppf((3 - gamma) / 4)
-		deltas.append(abs(moment1 / kv1 / n - moment1 / kv2 / n))
+		deltas.append(abs(moment1 * moment1 / (kv1 * kv1 * n) - moment1 * moment1 / (kv2 * kv2 * n)))
 	graphicPoints2.append(np.mean(deltas))
 plt.subplot(2, 1, 1)
 plt.plot([i for i in range(20, maxN)], graphicPoints1)
