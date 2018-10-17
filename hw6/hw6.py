@@ -13,13 +13,13 @@ def moment(list, k):
 
 graphicPoints1 = []
 
-gamma = 0.1
+gamma = 0.9
 sigma = 5
 maxN = 200
 
 for n in range(20, maxN):
 	deltas = []
-	for i in range(0, 20):
+	for i in range(0, 50):
 		sample = np.random.normal(0, sigma, n)
 		moment2 = moment(sample, 2)
 		kv1 = chi2.ppf((1 + gamma) / 2, n)
@@ -31,7 +31,7 @@ graphicPoints2 = []
 
 for n in range(20, maxN):
 	deltas = []
-	for i in range(0, 20):
+	for i in range(0, 100):
 		sample = np.random.normal(0, sigma, n)
 		moment1 = moment(sample, 1)
 		kv1 = norm.ppf((3 + gamma) / 4)
